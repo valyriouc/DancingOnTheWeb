@@ -3,14 +3,6 @@
 namespace Tooling.Markdown;
 
 /// <summary>
-/// Represents single markdown block element
-/// </summary>
-public class MarkdownBlock
-{
-    
-}
-
-/// <summary>
 /// Represents a single markdown document
 /// </summary>
 public class MarkdownDocument : IEnumerable<MarkdownBlock>
@@ -67,15 +59,15 @@ public class MarkdownDocument : IEnumerable<MarkdownBlock>
         }
     }
 
-    public string ToHtml()
-    {
-        
-    }
-
-    public string ToHtmlDocument()
-    {
-        
-    }
+    // public string ToHtml()
+    // {
+    //     
+    // }
+    //
+    // public string ToHtmlDocument()
+    // {
+    //     
+    // }
     
     #region Enumerable
     

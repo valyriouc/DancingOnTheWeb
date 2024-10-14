@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=46d753f4_002Ddd74_002D4c49_002D9a0e_002D4b631e97a06f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ReadMetadataHeader" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=46d753f4_002Ddd74_002D4c49_002D9a0e_002D4b631e97a06f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReadMetadataHeader" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.ReaderShould.ReadMetadataHeader&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
