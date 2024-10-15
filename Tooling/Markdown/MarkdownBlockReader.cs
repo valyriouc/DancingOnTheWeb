@@ -72,13 +72,14 @@ public static class MarkdownBlockReader
         return span.Trim();
     }
     
-    // public static IEnumerable<(MdBlockType, string)> ReadIntoBlocks(ReadOnlySpan<char> span)
-    // {
-    //     if (span.IsEmpty)
-    //     {
-    //         yield break;
-    //     }
-    // }
+    public static void ReadIntoBlocks(ReadOnlySpan<char> span, out List<(MdBlockType, string)> blocks)
+    {
+        blocks = new List<(MdBlockType, string)>();
+        if (span.IsEmpty)
+        {
+            return;
+        }
+    }
 }
 
 internal static class SpanExtensions
