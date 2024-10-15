@@ -1,4 +1,3 @@
-using NuGet.Frameworks;
 using Tooling.Markdown;
 
 namespace ToolingTests;
