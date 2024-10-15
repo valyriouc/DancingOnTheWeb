@@ -21,54 +21,64 @@ public static class MarkdownBlockReader
 {
     public static NewLine NewLine = NewLine.Windows;
     
-    public static IEnumerable<(string, string)> ReadHeaders(ReadOnlySpan<char> span)
+    public static ReadOnlySpan<char> ReadHeaders(ReadOnlySpan<char> span, out Dictionary<string, string> headers)
     {
+        headers = new Dictionary<string, string>();
+        
         if (span.IsEmpty)
         {
-            yield break;
+            return ReadOnlySpan<char>.Empty;
         }
-
-        span = span.SkipNonSenseCharacters();
-        if (span[0..3] != "---")
+        
+        if (span[0..3] is not "---")
         {
-            yield break;
+            return span[3..];
         }
-        span = span[3..].ConsumeNewline();
 
+        span = span[3..];
+        
         while (true)
         {
-            span = span.SkipNonSenseCharacters();
-            if (span[0..3] == "---")
+            span = span
+                .SkipNonSenseCharacters()
+                .ConsumeNewline();
+            
+            if (span[0..3] is "---")
             {
+                span = span[3..];
                 break;
             }
 
             int index = span.IndexOf(':');
-            string key = span[..index].ToString();
+            string key = span[..index]
+                .ThrowWhenMalformedMdHeader()
+                .ToString();
 
             index += 1;
-            span = span[index..];
-
-            span = span.SkipNonSenseCharacters();
+            span = span[index..].SkipNonSenseCharacters();
             
             index = span.IndexOf(NewLine.AsNewLineChar());
-            string value = span[..index].ToString();
+            string value = span[..index]
+                .ThrowWhenMalformedMdHeader()
+                .ToString();
             
-            span = span.ConsumeNewline();
-
-            yield return (key, value);
+            span = span[index..].ConsumeNewline();
+            
+            headers.Add(key.Trim(), value.Trim());
         }
 
         span = span.ConsumeNewline();
+
+        return span.Trim();
     }
     
-    public static IEnumerable<(MdBlockType, string)> ReadIntoBlocks(ReadOnlySpan<char> span)
-    {
-        if (span.IsEmpty)
-        {
-            yield break;
-        }
-    }
+    // public static IEnumerable<(MdBlockType, string)> ReadIntoBlocks(ReadOnlySpan<char> span)
+    // {
+    //     if (span.IsEmpty)
+    //     {
+    //         yield break;
+    //     }
+    // }
 }
 
 internal static class SpanExtensions
@@ -97,13 +107,39 @@ internal static class SpanExtensions
 
     public static ReadOnlySpan<char> ConsumeNewline(this ReadOnlySpan<char> self)
     {
-        if (self[0] == '\n' || self[0] == '\r')
+        if (self.IsEmpty)
+        {
+            return self;
+        }
+        
+        if (self[0] == '\n')
+        {
+            return self[1..];
+        }
+        
+        if (self[0] == '\r')
         {
             self = self[1..];
+            
             if (self[0] == '\n')
             {
                 self = self[1..];
             }
+        }
+
+        return self;
+    }
+
+    public static ReadOnlySpan<char> ThrowWhenMalformedMdHeader(this ReadOnlySpan<char> self)
+    {
+        if (self.IsEmpty)
+        {
+            return self;
+        }
+
+        if (self.Contains('\n') || self.Contains('\r'))
+        {
+            throw new MarkdownException("Malformed markdown header. Expected format 'key: value'");
         }
 
         return self;

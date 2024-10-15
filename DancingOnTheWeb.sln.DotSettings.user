@@ -1,6 +1,15 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AString_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F13e79b2a7b78394ccf591d3454bff5bfb14e692da011a7e38b66c2312b365a_003FString_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThrowHelper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa_003FThrowHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=46d753f4_002Ddd74_002D4c49_002D9a0e_002D4b631e97a06f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReadMetadataHeader" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.ReaderShould.ReadMetadataHeader&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithSingleLine&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithSingleLineWhenEndsWithNewLine&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithTwoLines&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithThreeLines&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithSingleLineWhenEndsWithEmptyLineBetween&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithSingleLineWhenStartingWithEmptyLines&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.BreaksReadingWhenMalformedHeader&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::55C5076D-2EBC-4608-86DC-611522A44102::net8.0::ToolingTests.MarkdowBlockReaderShould.ReadsHeaderWithSingleLineExcludingWhitespaces&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
