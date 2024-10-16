@@ -8,10 +8,24 @@ internal class Program
 {
     public static Config Config { get; private set; }
 
+    private static readonly TimeSpan pullInterval = TimeSpan.FromMinutes(2);
+    
     public static void Main(string[] args)
     {
+
         Config = Config.GetFromEnvironment();
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+        
+        Thread t = new Thread(() =>
+        {
+            while (true)
+            {   
+                
+            }
+        });
+        
+        t.Start();
         
         // Add services to the container.
         builder.Services.AddRazorPages();
@@ -40,9 +54,12 @@ internal class Program
 
 internal struct Config
 {
-    [JsonPropertyName("base_path")]
-    public string BlogPath { get; set; }
+    [JsonPropertyName("base_folder")]
+    public string BlogFolder { get; set; }
 
+    [JsonPropertyName("git_repo")]
+    public string GitRepo { get; set; }
+    
     public static Config GetFromEnvironment()
     {
         string path = Path.Combine(
